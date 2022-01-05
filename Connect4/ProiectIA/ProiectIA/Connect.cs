@@ -31,16 +31,16 @@ namespace ProiectIA
         public HashSet<String> decrement;
    //     public Dictionary<string, int> visited;
         public int[,] tabla;
-        private int panelWidth;
-        private int panelHeight;
-        private int circleWidth;
-        private int circleHeight;
+        private int latime;
+        private int inaltime;
+        private int latimeBila;
+        private int inaltimeBila;
 
         public int raza { get; set; }
         Color jucator;
         Color calculator;
 
-        public Connect(int L, int C, int panelHeight, int panelWidth, Color j, Color c)
+        public Connect(int L, int C, int inaltimePanel, int latimePanel, Color j, Color c)
         {
             jucator = j;
             calculator = c;
@@ -52,11 +52,11 @@ namespace ProiectIA
             this.L= L;
             this.C = C;
 
-            this.panelHeight = panelHeight;
-            this.panelWidth = panelWidth;
-            circleWidth = panelWidth / C;
-            circleHeight = panelHeight / L;
-            raza = Math.Min(circleWidth, circleHeight) / 2;
+            this.inaltime = inaltimePanel ;
+            this.latime = latimePanel;
+            latimeBila = latime / C;
+            inaltimeBila = inaltime / L;
+            raza = Math.Min(latimeBila, inaltimeBila) / 2;
             raza -= 5;
         }
 
@@ -73,8 +73,8 @@ namespace ProiectIA
                     if (tabla[i, j] == 2)
                         color = calculator;
                     Brush brush = new SolidBrush(color);
-                    int x = (j * circleWidth) + (circleWidth / 2) - raza;
-                    int y = (i * circleHeight) + (circleHeight / 2) - raza;
+                    int x = (j * latimeBila) + (latimeBila / 2) - raza;
+                    int y = (i * inaltimeBila) + (inaltimeBila / 2) - raza;
                     graphics.FillEllipse(brush, x, y, 2 * raza, 2 * raza);
                     brush.Dispose();
                 }
@@ -103,14 +103,15 @@ namespace ProiectIA
                     if (tabla[i, j] != 0 && tabla[i, j + 1] == tabla[i, j] && tabla[i, j + 2] == tabla[i, j] && tabla[i, j + 3] == tabla[i, j])
                         return tabla[i, j];
 
-            for (int i = 0; i <= L - 4; i++)
-                for (int j = 0; j < C; j++)
-                    if (tabla[i, j] != 0 && tabla[i + 1, j] == tabla[i, j] && tabla[i + 2, j] == tabla[i, j] && tabla[i + 3, j] == tabla[i, j])
-                        return tabla[i, j];
 
             for (int i = 0; i <= L - 4; i++)
                 for (int j = 0; j <= C - 4; j++)
                     if (tabla[i, j] != 0 && tabla[i + 1, j + 1] == tabla[i, j] && tabla[i + 2, j + 2] == tabla[i, j] && tabla[i + 3, j + 3] == tabla[i, j])
+                        return tabla[i, j];
+
+            for (int i = 0; i <= L - 4; i++)
+                for (int j = 0; j < C; j++)
+                    if (tabla[i, j] != 0 && tabla[i + 1, j] == tabla[i, j] && tabla[i + 2, j] == tabla[i, j] && tabla[i + 3, j] == tabla[i, j])
                         return tabla[i, j];
 
             for (int i = 0; i <= L - 4; i++)
@@ -123,15 +124,15 @@ namespace ProiectIA
 
         public bool playerMove(Point p)
         {
-            int choice = p.X / circleWidth;
-            if (!validMoves(tabla).Contains(choice))
+            int alegere = p.X / latimeBila;
+            if (!validMoves(tabla).Contains(alegere))
                 return false;
             // Reprezintă alegerea de mutare a jucătorului
             for (int i = L - 1; i >= 0; i--)
             {
-                if (tabla[i, choice] == 0)
+                if (tabla[i, alegere] == 0)
                 {
-                    tabla[i, choice] = 1;
+                    tabla[i, alegere] = 1;
                     break;
                 }
             }
