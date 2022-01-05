@@ -52,7 +52,7 @@
             // 
             // numarRanduri
             // 
-            this.numarRanduri.Location = new System.Drawing.Point(638, 60);
+            this.numarRanduri.Location = new System.Drawing.Point(37, 53);
             this.numarRanduri.Name = "numarRanduri";
             this.numarRanduri.Size = new System.Drawing.Size(120, 22);
             this.numarRanduri.TabIndex = 4;
@@ -64,7 +64,7 @@
             // 
             // numarColoane
             // 
-            this.numarColoane.Location = new System.Drawing.Point(638, 119);
+            this.numarColoane.Location = new System.Drawing.Point(37, 110);
             this.numarColoane.Name = "numarColoane";
             this.numarColoane.Size = new System.Drawing.Size(120, 22);
             this.numarColoane.TabIndex = 5;
@@ -77,7 +77,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(638, 37);
+            this.label1.Location = new System.Drawing.Point(34, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 17);
             this.label1.TabIndex = 6;
@@ -86,7 +86,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(641, 96);
+            this.label2.Location = new System.Drawing.Point(34, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 17);
             this.label2.TabIndex = 7;

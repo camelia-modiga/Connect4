@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProiectIA
@@ -15,21 +9,17 @@ namespace ProiectIA
         private Graphics graphics;
         Connect connect;
 
-
         public MainGame(int L, int C, Color j, Color c)
         {
             InitializeComponent();
             CenterToScreen();
             connect = new Connect(L, C, panel.Height, panel.Width, j, c);
-            DoubleBuffered = true;
             graphics = panel.CreateGraphics();
         }
 
         private void ieșireToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Abort;
-            this.Close();
-            this.Dispose();
+            Environment.Exit(0);
         }
 
         private void jocNouToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,53 +28,42 @@ namespace ProiectIA
             StartGame startForm = new StartGame();
             startForm.ShowDialog();
             this.Close();
-            this.Dispose();
+            
         }
 
         private void panel_MouseClick(object sender, MouseEventArgs e)
         {
-            if (connect.playerMove(e.Location))
+            if (connect.mutareJucator(e.Location))
             {
                 Invalidate(true);
-                int castigator = connect.checkWinner();
-                if (castigator == Connect.PLAYER)
+                int castigator = connect.castigatorCurent();
+                if (castigator == Connect.JUCATOR)
                 {
-                    MessageBox.Show("Ai câștigat!!", "Joc terminat!");
-                    Close();
+                    MessageBox.Show("Ai câștigat!", "Joc terminat!");
+                    this.Close();
                     return;
                 }
-                //else if (castigator == Connect.COMPUTER)
-                //{
-                //    MessageBox.Show("Ai pierdut!!", "Joc terminat!");
-                //    return;
-                //}
-                else if (castigator == Connect.DRAW)
+                else if (castigator == Connect.REMIZA)
                 {
-                    MessageBox.Show("Remiză! Jucați din nou!!", "Incearca din nou!");
-                    Close();
+                    MessageBox.Show("Remiză! Jucați din nou!", "Încearcă din nou!");
+                    this.Close();
                     return;
                 }
 
-                connect.computerMove();
+                connect.mutareCalculator();
                 Invalidate(true);
-                castigator = connect.checkWinner();
-                //if (castigator == Connect.PLAYER)
-                //{
-                //    MessageBox.Show("Ai câștigat!", "Joc terminat!");
-                //    Close();
-                //    return;
-                //}
-                //else
-                if (castigator == Connect.COMPUTER)
+                castigator = connect.castigatorCurent();
+
+                if (castigator == Connect.CALCULATOR)
                 {
-                    MessageBox.Show("Ai pierdut!", "Joc terminat!");//, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    Close();
+                    MessageBox.Show("Ai pierdut!", "Joc terminat!");
+                    this.Close();
                     return;
                 }
-                else if (castigator == Connect.DRAW)
+                else if (castigator == Connect.REMIZA)
                 {
-                    MessageBox.Show("Remiză! Jucați din nou!", "Incearca din nou!");
-                    Close();
+                    MessageBox.Show("Remiză! Jucați din nou!", "Încearcă din nou!");
+                    this.Close();
                     return;
                 }
             }
@@ -94,7 +73,7 @@ namespace ProiectIA
 
         private void panel_Paint(object sender, PaintEventArgs e)
         {
-            connect.printBoard(graphics);
+            connect.deseneazaTabla(graphics);
         }
     }
 }
