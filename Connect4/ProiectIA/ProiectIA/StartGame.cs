@@ -12,21 +12,21 @@ namespace ProiectIA
 {
     public partial class StartGame : Form
     {
-        Color player1;
-        Color player2;
+        Color jucator;
+        Color calculator;
 
         public StartGame()
         {
             InitializeComponent();
             CenterToScreen();
-            player1 = Color.Yellow;
-            player2 = Color.Red;
+            jucator = Color.Yellow;
+            calculator = Color.Red;
         }
 
         private void startButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MainGame form = new MainGame((int)numarRanduri.Value, (int)numarColoane.Value, player1, player2);
+            MainGame form = new MainGame((int)numarRanduri.Value, (int)numarColoane.Value, jucator, calculator);
             form.ShowDialog();
             this.Close();
         }

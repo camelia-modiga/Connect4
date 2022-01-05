@@ -12,16 +12,17 @@ namespace ProiectIA
 {
     public partial class MainGame : Form
     {
-        private Graphics g;
-        Connect game;
+        private Graphics graphics;
+        Connect connect;
 
-        public MainGame(int N, int M, Color p1, Color p2)
+
+        public MainGame(int L, int C, Color j, Color c)
         {
             InitializeComponent();
             CenterToScreen();
-            game = new Connect(N, M, panel.Height, panel.Width, p1, p2);
+            connect = new Connect(L, C, panel.Height, panel.Width, j, c);
             DoubleBuffered = true;
-            g = panel.CreateGraphics();
+            graphics = panel.CreateGraphics();
         }
 
         private void ieșireToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,58 +43,58 @@ namespace ProiectIA
 
         private void panel_MouseClick(object sender, MouseEventArgs e)
         {
-            if (game.playerMove(e.Location))
+            if (connect.playerMove(e.Location))
             {
                 Invalidate(true);
-                int winner = game.checkWinner();
-                if (winner == Connect.PLAYER)
+                int castigator = connect.checkWinner();
+                if (castigator == Connect.PLAYER)
                 {
-                    MessageBox.Show("Player wins!", "Winner!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Ai câștigat!!", "Joc terminat!");
                     Close();
                     return;
                 }
-                else if (winner == Connect.COMPUTER)
+                //else if (castigator == Connect.COMPUTER)
+                //{
+                //    MessageBox.Show("Ai pierdut!!", "Joc terminat!");
+                //    return;
+                //}
+                else if (castigator == Connect.DRAW)
                 {
-                    MessageBox.Show("Computer wins!", "Winner!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    Close();
-                    return;
-                }
-                else if (winner == Connect.DRAW)
-                {
-                    MessageBox.Show("The board is full!", "Full!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Remiză! Jucați din nou!!", "Incearca din nou!");
                     Close();
                     return;
                 }
 
-                game.computerMove();
+                connect.computerMove();
                 Invalidate(true);
-                winner = game.checkWinner();
-                if (winner == Connect.PLAYER)
+                castigator = connect.checkWinner();
+                //if (castigator == Connect.PLAYER)
+                //{
+                //    MessageBox.Show("Ai câștigat!", "Joc terminat!");
+                //    Close();
+                //    return;
+                //}
+                //else
+                if (castigator == Connect.COMPUTER)
                 {
-                    MessageBox.Show("Player wins!", "Winner!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Ai pierdut!", "Joc terminat!");//, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     Close();
                     return;
                 }
-                else if (winner == Connect.COMPUTER)
+                else if (castigator == Connect.DRAW)
                 {
-                    MessageBox.Show("Computer wins!", "Winner!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    Close();
-                    return;
-                }
-                else if (winner == Connect.DRAW)
-                {
-                    MessageBox.Show("The board is full!", "Full!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Remiză! Jucați din nou!", "Incearca din nou!");
                     Close();
                     return;
                 }
             }
             else
-                MessageBox.Show("Invalid move! Make another choice!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Faceți o altă mișcare!", "Mai incearca!");
         }
 
         private void panel_Paint(object sender, PaintEventArgs e)
         {
-            game.printBoard(g);
+            connect.printBoard(graphics);
         }
     }
 }

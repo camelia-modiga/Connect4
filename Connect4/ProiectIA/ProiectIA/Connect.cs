@@ -29,7 +29,7 @@ namespace ProiectIA
         public readonly int M;
         public HashSet<String> increment;
         public HashSet<String> decrement;
-        public Dictionary<string, int> visited;
+   //     public Dictionary<string, int> visited;
         public int[,] board;
         private int panelWidth;
         private int panelHeight;
