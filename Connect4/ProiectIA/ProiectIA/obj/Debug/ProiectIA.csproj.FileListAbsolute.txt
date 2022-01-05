@@ -9,3 +9,14 @@ E:\Anul 4 Sem 1\My IA\Proiect bun\Connect4\Connect4\ProiectIA\ProiectIA\obj\Debu
 E:\Anul 4 Sem 1\My IA\Proiect bun\Connect4\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.pdb
 E:\Anul 4 Sem 1\My IA\Proiect bun\Connect4\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.Connect4.resources
 E:\Anul 4 Sem 1\My IA\Proiect bun\Connect4\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.StartGame.resources
+D:\Facultate\An 4\Semestrul 1\Inteligenta artificiala\Altele\Proiect\Connect4-main\Connect4-main\Connect4\ProiectIA\ProiectIA\bin\Debug\ProiectIA.exe.config
+D:\Facultate\An 4\Semestrul 1\Inteligenta artificiala\Altele\Proiect\Connect4-main\Connect4-main\Connect4\ProiectIA\ProiectIA\bin\Debug\ProiectIA.exe
+D:\Facultate\An 4\Semestrul 1\Inteligenta artificiala\Altele\Proiect\Connect4-main\Connect4-main\Connect4\ProiectIA\ProiectIA\bin\Debug\ProiectIA.pdb
+D:\Facultate\An 4\Semestrul 1\Inteligenta artificiala\Altele\Proiect\Connect4-main\Connect4-main\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.csprojAssemblyReference.cache
+D:\Facultate\An 4\Semestrul 1\Inteligenta artificiala\Altele\Proiect\Connect4-main\Connect4-main\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.Properties.Resources.resources
+D:\Facultate\An 4\Semestrul 1\Inteligenta artificiala\Altele\Proiect\Connect4-main\Connect4-main\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.StartGame.resources
+D:\Facultate\An 4\Semestrul 1\Inteligenta artificiala\Altele\Proiect\Connect4-main\Connect4-main\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.csproj.GenerateResource.cache
+D:\Facultate\An 4\Semestrul 1\Inteligenta artificiala\Altele\Proiect\Connect4-main\Connect4-main\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.csproj.CoreCompileInputs.cache
+D:\Facultate\An 4\Semestrul 1\Inteligenta artificiala\Altele\Proiect\Connect4-main\Connect4-main\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.exe
+D:\Facultate\An 4\Semestrul 1\Inteligenta artificiala\Altele\Proiect\Connect4-main\Connect4-main\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.pdb
+D:\Facultate\An 4\Semestrul 1\Inteligenta artificiala\Altele\Proiect\Connect4-main\Connect4-main\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.MainGame.resources

@@ -28,36 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.startButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.numarRanduri = new System.Windows.Forms.NumericUpDown();
             this.numarColoane = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.numarRanduri)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numarColoane)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(69, 29);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 53);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Jucător";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(69, 88);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 54);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Calculator";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // startButton
             // 
@@ -69,17 +49,6 @@
             this.startButton.Text = "START";
             this.startButton.UseVisualStyleBackColor = false;
             this.startButton.Click += new System.EventHandler(this.startButton_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.pictureBox1.Image = global::ProiectIA.Properties.Resources.fundal3;
-            this.pictureBox1.Location = new System.Drawing.Point(-5, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(814, 452);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // numarRanduri
             // 
@@ -123,39 +92,46 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Coloane";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pictureBox1.Image = global::ProiectIA.Properties.Resources.background;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1200, 824);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // StartGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1224, 859);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numarColoane);
             this.Controls.Add(this.numarRanduri);
             this.Controls.Add(this.startButton);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "StartGame";
-            this.Text = "StartGame";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Text = "Connect4";
             ((System.ComponentModel.ISupportInitialize)(this.numarRanduri)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numarColoane)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button startButton;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.NumericUpDown numarRanduri;
         private System.Windows.Forms.NumericUpDown numarColoane;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
