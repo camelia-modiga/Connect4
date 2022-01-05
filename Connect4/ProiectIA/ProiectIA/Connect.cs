@@ -10,13 +10,13 @@ namespace ProiectIA
 {
     class Move
     {
-        public int move;
-        public int score;
+        public int mutare;
+        public int scor;
 
         public Move(int m, int s)
         {
-            move = m;
-            score = s;
+            mutare = m;
+            scor = s;
         }
     }
 
@@ -25,57 +25,57 @@ namespace ProiectIA
         public const int PLAYER = 1;
         public const int COMPUTER = 2;
         public const int DRAW = 3;
-        public readonly int N;
-        public readonly int M;
+        public readonly int L;
+        public readonly int C;
         public HashSet<String> increment;
         public HashSet<String> decrement;
    //     public Dictionary<string, int> visited;
-        public int[,] board;
+        public int[,] tabla;
         private int panelWidth;
         private int panelHeight;
         private int circleWidth;
         private int circleHeight;
 
-        public int Radius { get; set; }
-        Color player1;
-        Color player2;
+        public int raza { get; set; }
+        Color jucator;
+        Color calculator;
 
-        public Connect(int N, int M, int panelHeight, int panelWidth, Color p1, Color p2)
+        public Connect(int L, int C, int panelHeight, int panelWidth, Color j, Color c)
         {
-            player1 = p1;
-            player2 = p2;
+            jucator = j;
+            calculator = c;
             string[] a = { "0002", "0020", "0022", "0200", "0202", "0220", "0222", "2000", "2002", "2020", "2022", "2200", "2202", "2220", "2222" };
             increment = new HashSet<String>(a);
             string[] b = { "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111" };
             decrement = new HashSet<String>(b);
-            board = new int[N, M];
-            this.N = N;
-            this.M = M;
+            tabla = new int[L, C];
+            this.L= L;
+            this.C = C;
 
             this.panelHeight = panelHeight;
             this.panelWidth = panelWidth;
-            circleWidth = panelWidth / M;
-            circleHeight = panelHeight / N;
-            Radius = Math.Min(circleWidth, circleHeight) / 2;
-            Radius -= 5;
+            circleWidth = panelWidth / C;
+            circleHeight = panelHeight / L;
+            raza = Math.Min(circleWidth, circleHeight) / 2;
+            raza -= 5;
         }
 
-        public void printBoard(Graphics g)
+        public void printBoard(Graphics graphics)
         {
-            g.Clear(Color.Blue);
-            for (int i = 0; i < N; ++i)
+            graphics.Clear(Color.Blue);
+            for (int i = 0; i < L; ++i)
             {
-                for (int j = 0; j < M; ++j)
+                for (int j = 0; j < C; ++j)
                 {
-                    Color color = Color.White;
-                    if (board[i, j] == 1)
-                        color = player1;
-                    if (board[i, j] == 2)
-                        color = player2;
+                    Color color = Color.Black;
+                    if (tabla[i, j] == 1)
+                        color = jucator;
+                    if (tabla[i, j] == 2)
+                        color = calculator;
                     Brush brush = new SolidBrush(color);
-                    int x = (j * circleWidth) + (circleWidth / 2) - Radius;
-                    int y = (i * circleHeight) + (circleHeight / 2) - Radius;
-                    g.FillEllipse(brush, x, y, 2 * Radius, 2 * Radius);
+                    int x = (j * circleWidth) + (circleWidth / 2) - raza;
+                    int y = (i * circleHeight) + (circleHeight / 2) - raza;
+                    graphics.FillEllipse(brush, x, y, 2 * raza, 2 * raza);
                     brush.Dispose();
                 }
             }
@@ -85,38 +85,38 @@ namespace ProiectIA
         public int checkWinner()
         {
             int flag = 1;
-            for (int i = 0; i < N; ++i)
-                for (int j = 0; j < M; ++j)
-                    if (board[i, j] == 0)
+            for (int i = 0; i < L; ++i)
+                for (int j = 0; j < C; ++j)
+                    if (tabla[i, j] == 0)
                         flag = 0;
 
             if (flag == 1) 
                 return 3;
 
-            return checkActualWinner(board);
+            return checkActualWinner(tabla);
         }
 
-        public int checkActualWinner(int[,] board)
+        public int checkActualWinner(int[,] tabla)
         {
-            for (int i = 0; i < N; i++)
-                for (int j = 0; j <= M - 4; j++)
-                    if (board[i, j] != 0 && board[i, j + 1] == board[i, j] && board[i, j + 2] == board[i, j] && board[i, j + 3] == board[i, j])
-                        return board[i, j];
+            for (int i = 0; i < L; i++)
+                for (int j = 0; j <= C - 4; j++)
+                    if (tabla[i, j] != 0 && tabla[i, j + 1] == tabla[i, j] && tabla[i, j + 2] == tabla[i, j] && tabla[i, j + 3] == tabla[i, j])
+                        return tabla[i, j];
 
-            for (int i = 0; i <= N - 4; i++)
-                for (int j = 0; j < M; j++)
-                    if (board[i, j] != 0 && board[i + 1, j] == board[i, j] && board[i + 2, j] == board[i, j] && board[i + 3, j] == board[i, j])
-                        return board[i, j];
+            for (int i = 0; i <= L - 4; i++)
+                for (int j = 0; j < C; j++)
+                    if (tabla[i, j] != 0 && tabla[i + 1, j] == tabla[i, j] && tabla[i + 2, j] == tabla[i, j] && tabla[i + 3, j] == tabla[i, j])
+                        return tabla[i, j];
 
-            for (int i = 0; i <= N - 4; i++)
-                for (int j = 0; j <= M - 4; j++)
-                    if (board[i, j] != 0 && board[i + 1, j + 1] == board[i, j] && board[i + 2, j + 2] == board[i, j] && board[i + 3, j + 3] == board[i, j])
-                        return board[i, j];
+            for (int i = 0; i <= L - 4; i++)
+                for (int j = 0; j <= C - 4; j++)
+                    if (tabla[i, j] != 0 && tabla[i + 1, j + 1] == tabla[i, j] && tabla[i + 2, j + 2] == tabla[i, j] && tabla[i + 3, j + 3] == tabla[i, j])
+                        return tabla[i, j];
 
-            for (int i = 0; i <= N - 4; i++)
-                for (int j = 3; j < M; j++)
-                    if (board[i, j] != 0 && board[i + 1, j - 1] == board[i, j] && board[i + 2, j - 2] == board[i, j] && board[i + 3, j - 3] == board[i, j])
-                        return board[i, j];
+            for (int i = 0; i <= L - 4; i++)
+                for (int j = 3; j < C; j++)
+                    if (tabla[i, j] != 0 && tabla[i + 1, j - 1] == tabla[i, j] && tabla[i + 2, j - 2] == tabla[i, j] && tabla[i + 3, j - 3] == tabla[i, j])
+                        return tabla[i, j];
             return -1;
 
         }
@@ -124,14 +124,14 @@ namespace ProiectIA
         public bool playerMove(Point p)
         {
             int choice = p.X / circleWidth;
-            if (!validMoves(board).Contains(choice))
+            if (!validMoves(tabla).Contains(choice))
                 return false;
             // Reprezintă alegerea de mutare a jucătorului
-            for (int i = N - 1; i >= 0; i--)
+            for (int i = L - 1; i >= 0; i--)
             {
-                if (board[i, choice] == 0)
+                if (tabla[i, choice] == 0)
                 {
-                    board[i, choice] = 1;
+                    tabla[i, choice] = 1;
                     break;
                 }
             }
@@ -140,15 +140,15 @@ namespace ProiectIA
 
         public void computerMove()
         {
-            Move m = minimax(board, 0, 2, int.MinValue, int.MaxValue);
+            Move m = minimax(tabla, 0, 2, int.MinValue, int.MaxValue);
 
-            if (m.move != -1 && m.move != -2)
+            if (m.mutare != -1 && m.mutare != -2)
             {
-                for (int i = N - 1; i >= 0; i--)
+                for (int i = L - 1; i >= 0; i--)
                 {
-                    if (board[i, m.move] == 0)
+                    if (tabla[i, m.mutare] == 0)
                     {
-                        board[i, m.move] = 2;
+                        tabla[i, m.mutare] = 2;
                         break;
                     }
                 }
@@ -156,29 +156,29 @@ namespace ProiectIA
         }
 
         // Returnează coloanele care nu se ocupă
-        private List<int> validMoves(int[,] board)
+        private List<int> validMoves(int[,] tabla)
         {
-            List<int> moves = new List<int>();
-            for (int i = 0; i < M; i++)
-                if (board[0, i] == 0) 
-                    moves.Add(i);
-            return moves;
+            List<int> mutari = new List<int>();
+            for (int i = 0; i < C; i++)
+                if (tabla[0, i] == 0) 
+                    mutari.Add(i);
+            return mutari;
         }
 
         // Funcție ce primește starea curentă, ce jucător a făcut mutarea și în ce coloană
         // Returnează primul spațiu liber din acea coloană
-        private int[,] applyMove(int[,] board, int column, int player)
+        private int[,] applyMove(int[,] tabla, int column, int jucator)
         {
-            int[,] newBoard = new int[N, M];
-            for (int i = 0; i < N; i++)
-                for (int j = 0; j < M; j++)
-                    newBoard[i, j] = board[i, j];
+            int[,] newBoard = new int[L,C];
+            for (int i = 0; i < L; i++)
+                for (int j = 0; j < C; j++)
+                    newBoard[i, j] = tabla[i, j];
 
-            for (int i = N - 1; i >= 0; i--)
+            for (int i = L - 1; i >= 0; i--)
             {
                 if (newBoard[i, column] == 0)
                 {
-                    newBoard[i, column] = player;
+                    newBoard[i, column] = jucator;
                     break;
                 }
             }
@@ -186,119 +186,119 @@ namespace ProiectIA
         }
 
         // Algoritumul minimax cu alfa beta pruning
-        public Move minimax(int[,] board, int depth, int player, int a, int b)
+        public Move minimax(int[,] tabla, int depth, int jucator, int a, int b)
         {
             int alpha = a;
             int beta = b;
-            int winner = checkActualWinner(board);
+            int castigator = checkActualWinner(tabla);
             if (depth == 3)
-                return new Move(-1, getHeuristic(board));
-            else if (winner != -1)
-                return new Move(-1, winner == 1 ? -1 * int.MaxValue : int.MaxValue);
+                return new Move(-1, getHeuristic(tabla));
+            else if (castigator != -1)
+                return new Move(-1, castigator == 1 ? -1 * int.MaxValue : int.MaxValue);
             else
             {
-                List<int> moves = validMoves(board);
-                if (moves.Count == 0)
-                    return new Move(-2, getHeuristic(board));
+                List<int> mutari = validMoves(tabla);
+                if (mutari.Count == 0)
+                    return new Move(-2, getHeuristic(tabla));
                 else
                 {
                     // Dacă nodul e minim
-                    if (player == 1)
+                    if (jucator == 1)
                     {
-                        int best_score = int.MaxValue, best_move = -1;
-                        for (int i = 0; i < moves.Count; i++)
+                        int scorulPerfect = int.MaxValue, mutareaPerfecta = -1;
+                        for (int i = 0; i < mutari.Count; i++)
                         {
-                            int[,] newBoard = applyMove(board, moves[i], player);
+                            int[,] newBoard = applyMove(tabla, mutari[i], jucator);
                             Move m = minimax(newBoard, depth + 1, 2, alpha, beta);
-                            if (m.score <= best_score)
+                            if (m.scor <= scorulPerfect)
                             {
-                                best_score = m.score;
-                                best_move = moves.ElementAt(i);
+                                scorulPerfect = m.scor;
+                                mutareaPerfecta = mutari.ElementAt(i);
                             }
-                            beta = Math.Min(beta, best_score);
+                            beta = Math.Min(beta, scorulPerfect);
                             if (beta < alpha) break;
                         }
-                        return new Move(best_move, best_score);
+                        return new Move(mutareaPerfecta, scorulPerfect);
                     }
                     // Dacă nodul e maxim
                     else
                     {
-                        int best_score = int.MinValue, best_move = -1;
-                        for (int i = 0; i < moves.Count; i++)
+                        int scorulPerfect = int.MinValue, mutareaPerfecta = -1;
+                        for (int i = 0; i < mutari.Count; i++)
                         {
-                            int[,] newBoard = applyMove(board, moves.ElementAt(i), player);
+                            int[,] newBoard = applyMove(tabla, mutari.ElementAt(i), jucator);
                             Move m = minimax(newBoard, depth + 1, 1, alpha, beta);
-                            if (m.score >= best_score)
+                            if (m.scor >= scorulPerfect)
                             {
-                                best_score = m.score;
-                                best_move = moves.ElementAt(i);
+                                scorulPerfect = m.scor;
+                                mutareaPerfecta = mutari.ElementAt(i);
                             }
-                            alpha = Math.Max(alpha, best_score);
+                            alpha = Math.Max(alpha, scorulPerfect);
                             if (beta < alpha) break;
                         }
-                        return new Move(best_move, best_score);
+                        return new Move(mutareaPerfecta, scorulPerfect);
                     }
                 }
             }
         }
 
         // Funcția de evaluare
-        public int getHeuristic(int[,] board)
+        public int getHeuristic(int[,] tabla)
         {
-            int winner = checkActualWinner(board);
+            int castigator = checkActualWinner(tabla);
             string s;
-            if (winner != -1)
+            if (castigator != -1)
             {
-                int m = winner == 1 ? -1 : 1;
+                int m = castigator == 1 ? -1 : 1;
                 return m * int.MaxValue;
             }
-            int count = 0;
-            for (int i = 0; i < N; i++)
+            int nr = 0;
+            for (int i = 0; i < L; i++)
             {
-                for (int j = 0; j <= M - 4; j++)
+                for (int j = 0; j <= C - 4; j++)
                 {
-                    s = String.Format("{0}{1}{2}{3}", board[i, j], board[i, j + 1], board[i, j + 2], board[i, j + 3]);
+                    s = String.Format("{0}{1}{2}{3}", tabla[i, j], tabla[i, j + 1], tabla[i, j + 2], tabla[i, j + 3]);
                     if (increment.Contains(s))
-                        count++;
+                        nr++;
                     else if (decrement.Contains(s))
-                        count--;
+                        nr--;
                 }
             }
-            for (int i = 0; i <= N - 4; i++)
+            for (int i = 0; i <= L - 4; i++)
             {
-                for (int j = 0; j < M; j++)
+                for (int j = 0; j < C; j++)
                 {
-                    s = String.Format("{0}{1}{2}{3}", board[i, j], board[i + 1, j], board[i + 2, j], board[i + 3, j]);
+                    s = String.Format("{0}{1}{2}{3}", tabla[i, j], tabla[i + 1, j], tabla[i + 2, j], tabla[i + 3, j]);
                     if (increment.Contains(s))
-                        count++;
+                        nr++;
                     else if (decrement.Contains(s))
-                        count--;
+                        nr--;
                 }
             }
-            for (int i = 0; i <= N - 4; i++)
+            for (int i = 0; i <= L - 4; i++)
             {
-                for (int j = 0; j <= M - 4; j++)
+                for (int j = 0; j <= C - 4; j++)
                 {
-                    s = String.Format("{0}{1}{2}{3}", board[i, j], board[i + 1, j + 1], board[i + 2, j + 2], board[i + 3, j + 3]);
+                    s = String.Format("{0}{1}{2}{3}", tabla[i, j], tabla[i + 1, j + 1], tabla[i + 2, j + 2], tabla[i + 3, j + 3]);
                     if (increment.Contains(s))
-                        count++;
+                        nr++;
                     else if (decrement.Contains(s))
-                        count--;
+                        nr--;
                 }
             }
 
-            for (int i = 0; i <= N - 4; i++)
+            for (int i = 0; i <= L - 4; i++)
             {
-                for (int j = 3; j < M; j++)
+                for (int j = 3; j < C; j++)
                 {
-                    s = String.Format("{0}{1}{2}{3}", board[i, j], board[i + 1, j - 1], board[i + 2, j - 2], board[i + 3, j - 3]);
+                    s = String.Format("{0}{1}{2}{3}", tabla[i, j], tabla[i + 1, j - 1], tabla[i + 2, j - 2], tabla[i + 3, j - 3]);
                     if (increment.Contains(s))
-                        count++;
+                        nr++;
                     else if (decrement.Contains(s))
-                        count--;
+                        nr--;
                 }
             }
-            return count;
+            return nr;
         }
     }
 }
