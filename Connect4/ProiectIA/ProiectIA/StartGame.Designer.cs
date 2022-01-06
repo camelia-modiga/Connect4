@@ -42,7 +42,7 @@
             // startButton
             // 
             this.startButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.startButton.Location = new System.Drawing.Point(56, 343);
+            this.startButton.Location = new System.Drawing.Point(46, 649);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(254, 66);
             this.startButton.TabIndex = 2;
@@ -95,7 +95,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.pictureBox1.Image = global::ProiectIA.Properties.Resources.background;
+            this.pictureBox1.Image = global::ProiectIA.Properties.Resources.fundal6;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1200, 824);
@@ -107,7 +107,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1224, 859);
+            this.ClientSize = new System.Drawing.Size(947, 836);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numarColoane);
