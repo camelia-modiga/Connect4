@@ -239,7 +239,15 @@ namespace ProiectIA
                     nr = numarare(s, nr);
                 }
             }
-           
+            for (int i = 0; i <= L - 4; i++)
+            {
+                for (int j = 0; j < C; j++)
+                {
+                    s = String.Format("{0}{1}{2}{3}", tabla[i, j], tabla[i + 1, j], tabla[i + 2, j], tabla[i + 3, j]);
+                    nr = numarare(s, nr);
+                }
+            }
+
             for (int i = 0; i <= L - 4; i++)
             {
                 for (int j = 0; j <= C - 4; j++)
@@ -249,14 +257,7 @@ namespace ProiectIA
                 }
             }
 
-            for (int i = 0; i <= L - 4; i++)
-            {
-                for (int j = 0; j < C; j++)
-                {
-                    s = String.Format("{0}{1}{2}{3}", tabla[i, j], tabla[i + 1, j], tabla[i + 2, j], tabla[i + 3, j]);
-                    nr = numarare(s, nr);
-                }
-            }
+           
             for (int i = 0; i <= L - 4; i++)
             {
                 for (int j = 3; j < C; j++)
