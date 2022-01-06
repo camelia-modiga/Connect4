@@ -53,7 +53,10 @@ namespace ProiectIA
             this.latime = latimePanou;
             raza = Math.Min(latime/ C, inaltime / L) / 2 - 5; 
         }
-
+        /// <summary>
+        /// Metoda folosita pentru desenarea tablei de joc
+        /// </summary>
+        /// <param name="graphics"></param>
         public void deseneazaTabla(Graphics graphics)
         {
             graphics.Clear(Color.Blue);
@@ -74,6 +77,12 @@ namespace ProiectIA
                 }
             }
         }
+
+        /// <summary>
+        /// Metoda care verifica daca exista un castigator
+        /// </summary>
+        /// <param name="tabla"></param>
+        /// <returns></returns>
         public int verificaCastigator(int[,] tabla)
         {
             for (int i = 0; i < L; i++)
@@ -99,7 +108,11 @@ namespace ProiectIA
             return -1;
 
         }
-        // Verifică dacă există un câștigător în starea actuală și îl returnează dacă există
+
+        /// <summary>
+        /// Metoda care verifica daca in starea actuala exista un castigator si il returneaza daca exista 
+        /// </summary>
+        /// <returns></returns>
         public int castigatorCurent()
         {
             int aux = 1;
@@ -113,12 +126,16 @@ namespace ProiectIA
 
             return verificaCastigator(tabla);
         }
+        /// <summary>
+        /// Metoda care reprezinta coloana pe care jucatorul a ales-o, mutarea facuta de acesta
+        /// </summary>
+        /// <param name="locatie"></param>
+        /// <returns></returns>
         public bool mutareJucator(Point locatie)
         {
             int alegere = locatie.X / (latime / C);
             if (!mutareValida(tabla).Contains(alegere))
                 return false;
-            // Reprezintă alegerea de mutare a jucătorului
             for (int i = L - 1; i >= 0; i--)
             {
                 if (tabla[i, alegere] == 0)
@@ -131,14 +148,15 @@ namespace ProiectIA
         }
 
         public void mutareCalculator()
-        {
+        {   
+            ///algoritmul Minimax se apeleaza dupa fiecare mutare a jucatorului
             Move m = algoritmMinimax(tabla, 0, 2, int.MinValue, int.MaxValue);
 
             if (m.mutare != -1 && m.mutare != -2)
             {
                 for (int i = L - 1; i >= 0; --i)
                 {
-                    // daca exista spatiu pe tabla, atunci se pune piesa (pe primul loc liber)
+                    /// daca exista spatiu pe tabla, atunci se pune piesa (pe primul loc liber)
                     if (tabla[i, m.mutare] == 0)
                     {
                         tabla[i, m.mutare] = 2;
@@ -148,7 +166,11 @@ namespace ProiectIA
             }
         }
 
-        // Returnează coloanele care nu se ocupă
+        /// <summary>
+        /// returneaza coloanele pe care mai sunt acceptate mutari
+        /// </summary>
+        /// <param name="tabla"></param>
+        /// <returns></returns>
         private List<int> mutareValida(int[,] tabla)
         {
             List<int> mutariValide = new List<int>();
@@ -158,8 +180,14 @@ namespace ProiectIA
             return mutariValide;
         }
 
-        // Funcție ce primește starea curentă, ce jucător a făcut mutarea și în ce coloană
-        // Returnează primul spațiu liber din acea coloană
+        /// <summary>
+        /// Metoda ce primeste starea curenta, ce jucator a facut mutare si in ce coloana 
+        /// Returneaza primul spatiu liber din acea coloana
+        /// </summary>
+        /// <param name="tabla"></param>
+        /// <param name="coloana"></param>
+        /// <param name="jucator"></param>
+        /// <returns></returns>
         private int[,] mutareNoua(int[,] tabla, int coloana, int jucator)
         {
             int[,] aux = new int[L,C];
@@ -185,7 +213,12 @@ namespace ProiectIA
                 nr--;
             return nr;
         }
-        // Funcția de evaluare
+
+        /// <summary>
+        /// Functia de evaluare
+        /// </summary>
+        /// <param name="tabla"></param>
+        /// <returns></returns>
         public int functieEvaluare(int[,] tabla)
         {
             int castigator = verificaCastigator(tabla);
@@ -206,14 +239,7 @@ namespace ProiectIA
                     nr = numarare(s, nr);
                 }
             }
-            for (int i = 0; i <= L - 4; i++)
-            {
-                for (int j = 0; j < C; j++)
-                {
-                    s = String.Format("{0}{1}{2}{3}", tabla[i, j], tabla[i + 1, j], tabla[i + 2, j], tabla[i + 3, j]);
-                    nr = numarare(s, nr);
-                }
-            }
+           
             for (int i = 0; i <= L - 4; i++)
             {
                 for (int j = 0; j <= C - 4; j++)
@@ -225,6 +251,14 @@ namespace ProiectIA
 
             for (int i = 0; i <= L - 4; i++)
             {
+                for (int j = 0; j < C; j++)
+                {
+                    s = String.Format("{0}{1}{2}{3}", tabla[i, j], tabla[i + 1, j], tabla[i + 2, j], tabla[i + 3, j]);
+                    nr = numarare(s, nr);
+                }
+            }
+            for (int i = 0; i <= L - 4; i++)
+            {
                 for (int j = 3; j < C; j++)
                 {
                     s = String.Format("{0}{1}{2}{3}", tabla[i, j], tabla[i + 1, j - 1], tabla[i + 2, j - 2], tabla[i + 3, j - 3]);
@@ -233,13 +267,23 @@ namespace ProiectIA
             }
             return nr;
         }
-        // Algoritumul minimax cu alfa beta pruning
-        //// auc este newBoard!!!
+
+        /// <summary>
+        /// Algoritumul minimax cu retezare alfa beta
+        /// </summary>
+        /// <param name="tabla"></param>
+        /// <param name="depth"></param>
+        /// <param name="jucator"></param>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
         public Move algoritmMinimax(int[,] tabla, int depth, int jucator, int a, int b)
         {
             int alfa = a;
             int beta = b;
             int castigator = verificaCastigator(tabla);
+
+            ///adancimear arborelui este 3
             if (depth == 3)
                 return new Move(-1, functieEvaluare(tabla));
             else if (castigator != -1)
@@ -254,27 +298,8 @@ namespace ProiectIA
                     return new Move(-2, functieEvaluare(tabla));
                 else
                 {
-                    // Dacă nodul e minim
-                    if (jucator == 1)
-                    {
-                        int scorulPerfect = int.MaxValue, mutareaPerfecta = -1;
-                        for (int i = 0; i < mutari.Count; i++)
-                        {
-                            int[,] aux = mutareNoua(tabla, mutari[i], jucator);
-                            Move m = algoritmMinimax(aux, depth + 1, 2, alfa, beta);
-                            if (m.scor <= scorulPerfect)
-                            {
-                                scorulPerfect = m.scor;
-                                mutareaPerfecta = mutari.ElementAt(i);
-                            }
-                            beta = Math.Min(beta, scorulPerfect);
-                            if (beta < alfa)
-                                break;
-                        }
-                        return new Move(mutareaPerfecta, scorulPerfect);
-                    }
-                    // Dacă nodul e maxim
-                    else
+                    ///daca nodul este maxim
+                    if (jucator != 1)
                     {
                         int scorulPerfect = int.MinValue, mutareaPerfecta = -1;
                         for (int i = 0; i < mutari.Count; i++)
@@ -287,7 +312,27 @@ namespace ProiectIA
                                 mutareaPerfecta = mutari.ElementAt(i);
                             }
                             alfa = Math.Max(alfa, scorulPerfect);
-                            if (beta < alfa)
+                            if (alfa > beta)
+                                break;
+                        }
+                        return new Move(mutareaPerfecta, scorulPerfect);
+                        
+                    }
+                    /// daca nodul este minim
+                    else
+                    {
+                        int scorulPerfect = int.MaxValue, mutareaPerfecta = -1;
+                        for (int i = 0; i < mutari.Count; i++)
+                        {
+                            int[,] aux = mutareNoua(tabla, mutari[i], jucator);
+                            Move m = algoritmMinimax(aux, depth + 1, 2, alfa, beta);
+                            if (m.scor <= scorulPerfect)
+                            {
+                                scorulPerfect = m.scor;
+                                mutareaPerfecta = mutari.ElementAt(i);
+                            }
+                            beta = Math.Min(beta, scorulPerfect);
+                            if (alfa > beta)
                                 break;
                         }
                         return new Move(mutareaPerfecta, scorulPerfect);

@@ -16,12 +16,20 @@ namespace ProiectIA
             connect = new Connect(L, C, panel.Height, panel.Width, j, c);
             graphics = panel.CreateGraphics();
         }
-
+        /// <summary>
+        /// Metoda pentru inchiderea aplicatiei
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ieșireToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
         }
-
+        /// <summary>
+        /// Metoda pentru inceperea unui joc nou, indiferent de momentul in care se afla jocul curent
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void jocNouToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -30,9 +38,14 @@ namespace ProiectIA
             this.Close();
             
         }
-
+        /// <summary>
+        /// Metoda pentru a decide daca mutarea se poate realiza si daca influenteaza terminarea sau continuarea jocului
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void panel_MouseClick(object sender, MouseEventArgs e)
         {
+            /// daca mutarea jucatorului este decisiva, se afiseaza un mesaj corespunzator 
             if (connect.mutareJucator(e.Location))
             {
                 Invalidate(true);
@@ -50,6 +63,7 @@ namespace ProiectIA
                     return;
                 }
 
+                /// daca mutarea calculatorului este decisiva, se afiseaza un mesaj corespunzator 
                 connect.mutareCalculator();
                 Invalidate(true);
                 castigator = connect.castigatorCurent();
@@ -67,10 +81,16 @@ namespace ProiectIA
                     return;
                 }
             }
+            ///daca mutarea nu este permisa, se afiseaza un mesaj corespunzator
             else
                 MessageBox.Show("Faceți o altă mișcare!", "Mai incearca!");
         }
 
+        /// <summary>
+        /// Metoda pentru desenarea tablei de joc
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void panel_Paint(object sender, PaintEventArgs e)
         {
             connect.deseneazaTabla(graphics);
