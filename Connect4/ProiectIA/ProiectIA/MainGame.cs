@@ -95,5 +95,11 @@ namespace ProiectIA
         {
             connect.deseneazaTabla(graphics);
         }
+
+        private void despreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(" 1.Tu începi jocul!\n 2.Calculatorul pune o piesă imediat după tine! \n 3.Câștigă cine pune primul 4 bile în ordine (diagonală/verticală/orizontală) \n 4.Ai pierdut?Joacă din nou! :)", "Reguli!");
+            return;
+        }
     }
 }

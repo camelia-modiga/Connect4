@@ -301,7 +301,7 @@ namespace ProiectIA
                     ///daca nodul este maxim
                     if (jucator != 1)
                     {
-                        int scorulPerfect = int.MinValue, mutareaPerfecta = -1;
+                        int scorulPerfect = int.MinValue, mutareaPerfecta = -1000;
                         for (int i = 0; i < mutari.Count; i++)
                         {
                             int[,] newBoard = mutareNoua(tabla, mutari.ElementAt(i), jucator);
@@ -321,7 +321,7 @@ namespace ProiectIA
                     /// daca nodul este minim
                     else
                     {
-                        int scorulPerfect = int.MaxValue, mutareaPerfecta = -1;
+                        int scorulPerfect = int.MaxValue, mutareaPerfecta = -1000;
                         for (int i = 0; i < mutari.Count; i++)
                         {
                             int[,] aux = mutareNoua(tabla, mutari[i], jucator);
