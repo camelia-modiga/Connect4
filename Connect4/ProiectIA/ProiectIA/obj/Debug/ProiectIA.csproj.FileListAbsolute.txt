@@ -1,33 +1,43 @@
-E:\Anul 4 Sem 1\My IA\Proiect bun\Connect4\Connect4\ProiectIA\ProiectIA\bin\Debug\ProiectIA.exe.config
-E:\Anul 4 Sem 1\My IA\Proiect bun\Connect4\Connect4\ProiectIA\ProiectIA\bin\Debug\ProiectIA.exe
-E:\Anul 4 Sem 1\My IA\Proiect bun\Connect4\Connect4\ProiectIA\ProiectIA\bin\Debug\ProiectIA.pdb
-E:\Anul 4 Sem 1\My IA\Proiect bun\Connect4\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.csprojAssemblyReference.cache
-E:\Anul 4 Sem 1\My IA\Proiect bun\Connect4\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.Properties.Resources.resources
-E:\Anul 4 Sem 1\My IA\Proiect bun\Connect4\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.csproj.GenerateResource.cache
-E:\Anul 4 Sem 1\My IA\Proiect bun\Connect4\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.csproj.CoreCompileInputs.cache
-E:\Anul 4 Sem 1\My IA\Proiect bun\Connect4\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.exe
-E:\Anul 4 Sem 1\My IA\Proiect bun\Connect4\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.pdb
-E:\Anul 4 Sem 1\My IA\Proiect bun\Connect4\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.Connect4.resources
-E:\Anul 4 Sem 1\My IA\Proiect bun\Connect4\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.StartGame.resources
-D:\Facultate\An 4\Semestrul 1\Inteligenta artificiala\Altele\Proiect\Connect4-main\Connect4-main\Connect4\ProiectIA\ProiectIA\bin\Debug\ProiectIA.exe.config
-D:\Facultate\An 4\Semestrul 1\Inteligenta artificiala\Altele\Proiect\Connect4-main\Connect4-main\Connect4\ProiectIA\ProiectIA\bin\Debug\ProiectIA.exe
-D:\Facultate\An 4\Semestrul 1\Inteligenta artificiala\Altele\Proiect\Connect4-main\Connect4-main\Connect4\ProiectIA\ProiectIA\bin\Debug\ProiectIA.pdb
-D:\Facultate\An 4\Semestrul 1\Inteligenta artificiala\Altele\Proiect\Connect4-main\Connect4-main\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.csprojAssemblyReference.cache
-D:\Facultate\An 4\Semestrul 1\Inteligenta artificiala\Altele\Proiect\Connect4-main\Connect4-main\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.Properties.Resources.resources
-D:\Facultate\An 4\Semestrul 1\Inteligenta artificiala\Altele\Proiect\Connect4-main\Connect4-main\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.StartGame.resources
-D:\Facultate\An 4\Semestrul 1\Inteligenta artificiala\Altele\Proiect\Connect4-main\Connect4-main\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.csproj.GenerateResource.cache
-D:\Facultate\An 4\Semestrul 1\Inteligenta artificiala\Altele\Proiect\Connect4-main\Connect4-main\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.csproj.CoreCompileInputs.cache
-D:\Facultate\An 4\Semestrul 1\Inteligenta artificiala\Altele\Proiect\Connect4-main\Connect4-main\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.exe
-D:\Facultate\An 4\Semestrul 1\Inteligenta artificiala\Altele\Proiect\Connect4-main\Connect4-main\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.pdb
-D:\Facultate\An 4\Semestrul 1\Inteligenta artificiala\Altele\Proiect\Connect4-main\Connect4-main\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.MainGame.resources
-E:\Anul 4 Sem 1\My IA\Proiect IA corect\Connect4\Connect4\ProiectIA\ProiectIA\bin\Debug\ProiectIA.exe.config
-E:\Anul 4 Sem 1\My IA\Proiect IA corect\Connect4\Connect4\ProiectIA\ProiectIA\bin\Debug\ProiectIA.exe
-E:\Anul 4 Sem 1\My IA\Proiect IA corect\Connect4\Connect4\ProiectIA\ProiectIA\bin\Debug\ProiectIA.pdb
-E:\Anul 4 Sem 1\My IA\Proiect IA corect\Connect4\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.csprojAssemblyReference.cache
-E:\Anul 4 Sem 1\My IA\Proiect IA corect\Connect4\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.MainGame.resources
-E:\Anul 4 Sem 1\My IA\Proiect IA corect\Connect4\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.Properties.Resources.resources
-E:\Anul 4 Sem 1\My IA\Proiect IA corect\Connect4\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.StartGame.resources
-E:\Anul 4 Sem 1\My IA\Proiect IA corect\Connect4\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.csproj.GenerateResource.cache
-E:\Anul 4 Sem 1\My IA\Proiect IA corect\Connect4\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.csproj.CoreCompileInputs.cache
-E:\Anul 4 Sem 1\My IA\Proiect IA corect\Connect4\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.exe
-E:\Anul 4 Sem 1\My IA\Proiect IA corect\Connect4\Connect4\ProiectIA\ProiectIA\obj\Debug\ProiectIA.pdb
+E:/Anul 4 Sem 1/My IA/Proiect bun/Connect4/Connect4/ProiectIA/ProiectIA/bin/Debug/ProiectIA.exe.config
+E:/Anul 4 Sem 1/My IA/Proiect bun/Connect4/Connect4/ProiectIA/ProiectIA/bin/Debug/ProiectIA.exe
+E:/Anul 4 Sem 1/My IA/Proiect bun/Connect4/Connect4/ProiectIA/ProiectIA/bin/Debug/ProiectIA.pdb
+E:/Anul 4 Sem 1/My IA/Proiect bun/Connect4/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.csprojAssemblyReference.cache
+E:/Anul 4 Sem 1/My IA/Proiect bun/Connect4/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.Properties.Resources.resources
+E:/Anul 4 Sem 1/My IA/Proiect bun/Connect4/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.csproj.GenerateResource.cache
+E:/Anul 4 Sem 1/My IA/Proiect bun/Connect4/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.csproj.CoreCompileInputs.cache
+E:/Anul 4 Sem 1/My IA/Proiect bun/Connect4/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.exe
+E:/Anul 4 Sem 1/My IA/Proiect bun/Connect4/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.pdb
+E:/Anul 4 Sem 1/My IA/Proiect bun/Connect4/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.Connect4.resources
+E:/Anul 4 Sem 1/My IA/Proiect bun/Connect4/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.StartGame.resources
+D:/Facultate/An 4/Semestrul 1/Inteligenta artificiala/Altele/Proiect/Connect4-main/Connect4-main/Connect4/ProiectIA/ProiectIA/bin/Debug/ProiectIA.exe.config
+D:/Facultate/An 4/Semestrul 1/Inteligenta artificiala/Altele/Proiect/Connect4-main/Connect4-main/Connect4/ProiectIA/ProiectIA/bin/Debug/ProiectIA.exe
+D:/Facultate/An 4/Semestrul 1/Inteligenta artificiala/Altele/Proiect/Connect4-main/Connect4-main/Connect4/ProiectIA/ProiectIA/bin/Debug/ProiectIA.pdb
+D:/Facultate/An 4/Semestrul 1/Inteligenta artificiala/Altele/Proiect/Connect4-main/Connect4-main/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.csprojAssemblyReference.cache
+D:/Facultate/An 4/Semestrul 1/Inteligenta artificiala/Altele/Proiect/Connect4-main/Connect4-main/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.Properties.Resources.resources
+D:/Facultate/An 4/Semestrul 1/Inteligenta artificiala/Altele/Proiect/Connect4-main/Connect4-main/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.StartGame.resources
+D:/Facultate/An 4/Semestrul 1/Inteligenta artificiala/Altele/Proiect/Connect4-main/Connect4-main/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.csproj.GenerateResource.cache
+D:/Facultate/An 4/Semestrul 1/Inteligenta artificiala/Altele/Proiect/Connect4-main/Connect4-main/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.csproj.CoreCompileInputs.cache
+D:/Facultate/An 4/Semestrul 1/Inteligenta artificiala/Altele/Proiect/Connect4-main/Connect4-main/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.exe
+D:/Facultate/An 4/Semestrul 1/Inteligenta artificiala/Altele/Proiect/Connect4-main/Connect4-main/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.pdb
+D:/Facultate/An 4/Semestrul 1/Inteligenta artificiala/Altele/Proiect/Connect4-main/Connect4-main/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.MainGame.resources
+E:/Anul 4 Sem 1/My IA/Proiect IA corect/Connect4/Connect4/ProiectIA/ProiectIA/bin/Debug/ProiectIA.exe.config
+E:/Anul 4 Sem 1/My IA/Proiect IA corect/Connect4/Connect4/ProiectIA/ProiectIA/bin/Debug/ProiectIA.exe
+E:/Anul 4 Sem 1/My IA/Proiect IA corect/Connect4/Connect4/ProiectIA/ProiectIA/bin/Debug/ProiectIA.pdb
+E:/Anul 4 Sem 1/My IA/Proiect IA corect/Connect4/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.csprojAssemblyReference.cache
+E:/Anul 4 Sem 1/My IA/Proiect IA corect/Connect4/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.MainGame.resources
+E:/Anul 4 Sem 1/My IA/Proiect IA corect/Connect4/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.Properties.Resources.resources
+E:/Anul 4 Sem 1/My IA/Proiect IA corect/Connect4/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.StartGame.resources
+E:/Anul 4 Sem 1/My IA/Proiect IA corect/Connect4/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.csproj.GenerateResource.cache
+E:/Anul 4 Sem 1/My IA/Proiect IA corect/Connect4/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.csproj.CoreCompileInputs.cache
+E:/Anul 4 Sem 1/My IA/Proiect IA corect/Connect4/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.exe
+E:/Anul 4 Sem 1/My IA/Proiect IA corect/Connect4/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.pdb
+/media/cami/New Volume1/AN 4/Semestrul 1/IA/proiect/Connect4/ProiectIA/ProiectIA/bin/Debug/ProiectIA.exe.config
+/media/cami/New Volume1/AN 4/Semestrul 1/IA/proiect/Connect4/ProiectIA/ProiectIA/bin/Debug/ProiectIA.exe
+/media/cami/New Volume1/AN 4/Semestrul 1/IA/proiect/Connect4/ProiectIA/ProiectIA/bin/Debug/ProiectIA.pdb
+/media/cami/New Volume1/AN 4/Semestrul 1/IA/proiect/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.csprojAssemblyReference.cache
+/media/cami/New Volume1/AN 4/Semestrul 1/IA/proiect/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.Properties.Resources.resources
+/media/cami/New Volume1/AN 4/Semestrul 1/IA/proiect/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.csproj.GenerateResource.cache
+/media/cami/New Volume1/AN 4/Semestrul 1/IA/proiect/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.csproj.CoreCompileInputs.cache
+/media/cami/New Volume1/AN 4/Semestrul 1/IA/proiect/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.exe
+/media/cami/New Volume1/AN 4/Semestrul 1/IA/proiect/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.pdb
+/media/cami/New Volume1/AN 4/Semestrul 1/IA/proiect/Connect4/ProiectIA/ProiectIA/obj/Debug/ProiectIA.TablaJoc.resources

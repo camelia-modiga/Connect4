@@ -1,6 +1,6 @@
 ﻿namespace ProiectIA
 {
-    partial class MainGame
+    partial class TablaJoc
     {
         /// <summary>
         /// Required designer variable.
@@ -111,7 +111,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip;
             this.MaximizeBox = false;
-            this.Name = "MainGame";
+            this.Name = "TablaJoc";
             this.Text = "Connect4";
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
