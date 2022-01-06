@@ -162,14 +162,14 @@ namespace ProiectIA
         /// </summary>
         public void mutareCalculator()
         {
-            ///algoritmul Minimax se apeleaza dupa fiecare mutare a jucatorului
+            // algoritmul Minimax se apeleaza dupa fiecare mutare a jucatorului
             var mutare = algoritmMinimax(tabla, 0, 2, int.MinValue, int.MaxValue);
 
             if (mutare.Item1 != -1 && mutare.Item1 != -2)
             {
                 for (var i = L - 1; i >= 0; --i)
                 {
-                    /// daca exista spatiu pe tabla, atunci se pune piesa (pe primul loc liber)
+                    // daca exista spatiu pe tabla, atunci se pune piesa (pe primul loc liber)
                     if (tabla[i, mutare.Item1] == 0)
                     {
                         tabla[i, mutare.Item1] = 2;
@@ -314,9 +314,9 @@ namespace ProiectIA
         {
             var castigator = verificaCastigator(tabla);
 
-            ///adancimea arborelui este 3
-            /// conditia de terminare
-            /// am ajuns la nodul frunza
+            // adancimea arborelui este 3
+            // conditia de terminare
+            // am ajuns la nodul frunza
             if (adancime == 3)
                 return (-1, functieEvaluare(tabla));
             // daca exista un castigator
