@@ -307,8 +307,8 @@ namespace ProiectIA
         /// <param name="tabla"></param>
         /// <param name="adancime"></param>
         /// <param name="jucator"></param>
-        /// <param name="a"></param>
-        /// <param name="b"></param>
+        /// <param name="alfa"></param>
+        /// <param name="beta"></param>
         /// <returns></returns>
         private (int, int) algoritmMinimax(int[,] tabla, int adancime, int utilizator, int alfa, int beta)
         {
@@ -320,7 +320,7 @@ namespace ProiectIA
             if (adancime == 3)
                 return (-1, functieEvaluare(tabla));
             // daca exista un castigator
-            else if (castigator != -1)
+            if (castigator != -1)
                 // si castigatorul este jucatorul
                 if (castigator == 1)
                     // jucatorul devine minimzant
@@ -328,65 +328,65 @@ namespace ProiectIA
                 else
                     // altfel devine maximinzant
                     return (-1, int.MaxValue);
+            var mutari = mutareValida(tabla);
+            // daca nu mai avem pozitii libere pe tabla de joc se retureneaza -2
+            if (mutari.Count == 0)
+                return (-2, functieEvaluare(tabla));
+            // daca nodul este maxim
+            // adica utilizatorul este reprezentat de calculator
+            if (utilizator !=1)
+            {
+                //valoarea initiala pentru alfa
+                var scorOptim = int.MinValue;
+                var mutareOptima = -1000;
+                        
+                for (var i = 0; i < mutari.Count; i++)
+                {
+                    var aux = mutareNoua(tabla, mutari[i], utilizator);
+                    var mutare = algoritmMinimax(aux, adancime + 1, 1, alfa, beta);
+                            
+                    if (mutare.Item2 >= scorOptim)
+                    {
+                        scorOptim = mutare.Item2;
+                        mutareOptima = mutari[i];
+                    }
+
+                    alfa = Math.Max(alfa, scorOptim);
+                            
+                    // Condiția necesară pentru retezarea alfa-beta
+                    if (alfa > beta)
+                        break;
+                }
+
+                return (mutareOptima, scorOptim);
+
+            }
+            // daca nodul este minim
+            // adica utilizatorul este reprezentat de jucator
             else
             {
-                var mutari = mutareValida(tabla);
-                // daca nu mai avem pozitii libere pe tabla de joc se retureneaza -2
-                if (mutari.Count == 0)
-                    return (-2, functieEvaluare(tabla));
-                else
+                //valoarea initiala pentru beta
+                var scorOptim = int.MaxValue;
+                var mutareOptima = -1000;
+                        
+                for (var i = 0; i < mutari.Count; i++)
                 {
-                    // daca nodul este maxim
-                    // adica utilizatorul este reprezentat de calculator
-                    if (utilizator !=1)
+                    var aux = mutareNoua(tabla, mutari[i], utilizator);
+                    var mutare = algoritmMinimax(aux, adancime + 1, 2, alfa, beta);
+                           
+                    if (mutare.Item2 <= scorOptim)
                     {
-                        var scorOptim = int.MinValue;
-                        var mutareOptima = -1000;
-                        
-                        for (var i = 0; i < mutari.Count; i++)
-                        {
-                            var aux = mutareNoua(tabla, mutari.ElementAt(i), utilizator);
-                            var mutare = algoritmMinimax(aux, adancime + 1, 1, alfa, beta);
-                            if (mutare.Item2 >= scorOptim)
-                            {
-                                scorOptim = mutare.Item2;
-                                mutareOptima = mutari.ElementAt(i);
-                            }
-
-                            alfa = Math.Max(alfa, scorOptim);
-                            // retezare alfa-beta
-                            if (alfa > beta)
-                                break;
-                        }
-
-                        return (mutareOptima, scorOptim);
-
+                        scorOptim = mutare.Item2;
+                        mutareOptima = mutari[i];
                     }
-                    // daca nodul este minim
-                    // adica utilizatorul este reprezentat de jucator
-                    else
-                    {
-                        var scorOptim = int.MaxValue;
-                        var mutareOptima = -1000;
-                        
-                        for (var i = 0; i < mutari.Count; i++)
-                        {
-                            var aux = mutareNoua(tabla, mutari[i], utilizator);
-                            var mutare = algoritmMinimax(aux, adancime + 1, 2, alfa, beta);
-                            if (mutare.Item2 <= scorOptim)
-                            {
-                                scorOptim = mutare.Item2;
-                                mutareOptima = mutari[i];
-                            }
 
-                            beta = Math.Min(beta, scorOptim);
-                            if (alfa > beta)
-                                break;
-                        }
-
-                        return (mutareOptima, scorOptim);
-                    }
+                    beta = Math.Min(beta, scorOptim);
+                            
+                    // Condiția necesară pentru retezarea alfa-beta
+                    if (alfa > beta)
+                        break;
                 }
+                return (mutareOptima, scorOptim);
             }
         }
     }

@@ -7,13 +7,13 @@ namespace ProiectIA
     public partial class TablaJoc : Form
     {
         private Graphics grafice;
-        Implementare _implementare;
+        Implementare implementare;
 
         public TablaJoc()
         {
             InitializeComponent();
             CenterToScreen();
-            _implementare = new Implementare( panel.Height, panel.Width);
+            implementare = new Implementare( panel.Height, panel.Width);
             grafice = panel.CreateGraphics();
         }
         /// <summary>
@@ -46,10 +46,10 @@ namespace ProiectIA
         private void panel_MouseClick(object sender, MouseEventArgs e)
         {
             /// daca mutarea jucatorului este decisiva, se afiseaza un mesaj corespunzator 
-            if (_implementare.mutareJucator(e.Location))
+            if (implementare.mutareJucator(e.Location))
             {
                 Invalidate(true);
-                int castigator = _implementare.stareCurenta();
+                int castigator = implementare.stareCurenta();
                 if (castigator == Implementare.JUCATOR)
                 {
                     MessageBox.Show("Ai câștigat!", "Joc terminat!");
@@ -64,9 +64,9 @@ namespace ProiectIA
                 }
 
                 /// daca mutarea calculatorului este decisiva, se afiseaza un mesaj corespunzator 
-                _implementare.mutareCalculator();
+                implementare.mutareCalculator();
                 Invalidate(true);
-                castigator = _implementare.stareCurenta();
+                castigator = implementare.stareCurenta();
 
                 if (castigator == Implementare.CALCULATOR)
                 {
@@ -93,7 +93,7 @@ namespace ProiectIA
         /// <param name="e"></param>
         private void panel_Paint(object sender, PaintEventArgs e)
         {
-            _implementare.deseneazaTabla(grafice);
+            implementare.deseneazaTabla(grafice);
         }
 
         private void despreToolStripMenuItem_Click(object sender, EventArgs e)
